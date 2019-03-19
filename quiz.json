@@ -1,0 +1,18 @@
+[
+  {
+    "questionNumber": 1,
+    "question": "Hvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle?",
+    "answerA": "17%",
+    "answerB": "52%",
+    "answerC": "68%",
+    "correctAnswer": "17%"
+  },
+  {
+    "questionNumber": 2,
+    "question": "wHvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle?",
+    "answerA": "w17%",
+    "answerB": "w52%",
+    "answerC": "w68%",
+    "correctAnswer": "w17%"
+  }
+]
