@@ -5,14 +5,18 @@
     "answerA": "17%",
     "answerB": "52%",
     "answerC": "68%",
-    "correctAnswer": "17%"
+    "correctAnswer": "17%",
+    "answerIsCorrect": "Svaret er rigtigt! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum.",
+    "answerIsIncorrect": "Svaret er forkert! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum."
   },
   {
     "questionNumber": 2,
-    "question": "wHvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle?",
+    "question": "wwwwHvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle?",
     "answerA": "w17%",
     "answerB": "w52%",
     "answerC": "w68%",
-    "correctAnswer": "w17%"
+    "correctAnswer": "w17%",
+    "answerIsCorrect": "wwwSvaret er rigtigt! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum.",
+    "answerIsIncorrect": "wwwSvaret er forkert! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum."
   }
 ]

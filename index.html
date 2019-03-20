@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex">
     <title>Husk kronen - Rådet for Sikker Trafik</title>
 </head>
 
@@ -11,69 +12,79 @@
     <nav>
         <div class="nav__content">
             <img src="elements/logo.png">
+            <a href="#">Videoportfolio</a>
         </div>
     </nav>
+
     <main>
-        <div class="main__background_1">
+        <section id="title_section" class="main__background_1">
             <div class="main__content">
                 <h1>
                     Husk kronen
                 </h1>
             </div>
-        </div>
+        </section>
 
-        <div class="main__background_2">
+        <section id="video_section" class="main__background_2">
             <div class="main__content">
-                Kampagnevideo her
-                <br><br><br><br><br><br>
-                <br><br><br><br><br><br>
+                <h2>Kampagnevideo</h2>
+                <!--"quiz"-div'en nedenunder er KUN en placeholder - den skal erstattes med videoen-->
+
+                <div class="quiz"></div>
+
             </div>
-        </div>
+        </section>
 
-        <div class="main__background_1">
+        <section id="info_section" class="main__background_1">
             <div class="main__content">
+                <div class="flex">
+                    <div class="flex_one">
                 <h2>Husker du at passe på dig selv i trafikken?</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet
-                praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem
-                aliquam nunc elementum. Primis eaque condimentum est mauris fames duis, vitae sed. Voluptas venenatis
-                sapiente proin, montes ac litora nunc non laoreet tempus, mauris velit amet tellus, lacus vel placerat
-                arcu, condimentum quis donec.
+                    Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus
+                    amet
+                    praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem
+                    aliquam nunc elementum. Primis eaque condimentum est mauris fames duis, vitae sed. Voluptas
+                    venenatis
+                    sapiente proin, montes ac litora nunc non laoreet tempus, mauris velit amet tellus, lacus vel
+                    placerat
+                    arcu, condimentum quis donec.
                 </p>
-                <p>
-                    <b>
+                    </div>
+                    <div class="flex_one">
+                <h2><u>
                     Infografik infografik
-                    </b>
-                </p>
-            </div>
-        </div>
+                </u></h2>
+                    </div>
 
-        <div class="main__background_2">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="quiz_section" class="main__background_2">
             <div class="main__content">
                 <h2>Tag quizzen</h2>
                 <p>
                     Mange på 60+ tager cyklen, men hvor meget ved du om ældres sikkerhed i trafikken?
                 </p>
                 <div id="quiz" class="quiz">
-                    <button class="start_quiz hidden">Tag quizzen</button>
+                    <!--Knappen kører js-functionen startQuiz "onclick"/når man klikker-->
+                    <button class="start_quiz" onclick="startQuiz()">Tag quizzen</button>
 
-                    <div class="question_1">
-                        Hvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker
-                        deres evne til at cykle?<br>
-                            <input type="radio" class="choice" name="choice" value="17%">17%<br>
-                            <input type="radio" class="choice" name="choice" value="52%">52%<br>
-                            <input type="radio" class="choice" name="choice" value="68%">68%<br>
-                            <input type="submit" onclick="submit()" value="Næste">
+                    <div class="question_container hidden">
+
+
                     </div>
 
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="main__background_1">
+        <section class="main__background_1">
             <div class="main__content">
             </div>
-        </div>
+        </section>
     </main>
 
     <footer>
