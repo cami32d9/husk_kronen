@@ -10,12 +10,14 @@ let questions = [];
 // Den starter på 0, da loadQuestion() lægger et tal til allerede første gang, og dermed finder spørgsmål nr 1.
 let questionNumber = 0;
 
+let points = 0;
+
 const questionContainer = document.querySelector(".question_container");
 
 // Det eneste der sker, når siden loades, er, at json-filen loades. Spørgsmålene vises ikke endnu
 function start() {
     console.log("start()");
-    console.log(questionNumber);
+    console.log("questionNumber: " + questionNumber);
 
     async function getJson() {
         console.log("getJson");
@@ -31,6 +33,8 @@ function start() {
 function startQuiz() {
     document.querySelector(".start_quiz").classList.add("hidden");
     document.querySelector(".question_container").classList.remove("hidden");
+    questionNumber = 0;
+    points = 0;
     loadQuestion();
 }
 
@@ -41,7 +45,7 @@ function startQuiz() {
 // stedet for at loade et nyt spørgsmål.
 function loadQuestion() {
     questionNumber++;
-    console.log(questionNumber);
+    console.log("questionNumber:" + questionNumber);
     questions.forEach(question => {
         if (questionNumber === question.questionNumber) {
             questionContainer.innerHTML = `
@@ -54,8 +58,10 @@ function loadQuestion() {
         }
 
         else if (questionNumber > question.questionNumber) {
-            console.log("questionNumber is " + questionNumber + "and question.questionNumber is " + question.questionNumber);
-            questionContainer.innerHTML = "Quizzen er færdig";
+            let totalQuestionNumber = questionNumber - 1;
+            questionContainer.innerHTML = "Quizzen er færdig. Du svarede rigtigt på " + points + "/" + totalQuestionNumber + " spørgsmål."
+                // `<input type="submit" onclick="loadQuestion()" value="Næste">`
+            ;
         }
 
     });
@@ -70,13 +76,13 @@ function loadAnswer() {
 
     questions.forEach(question => {
         if (questionNumber === question.questionNumber) {
-            console.log("questionNumber is " + questionNumber + "and question.questionNumber is " + question.questionNumber);
             if (chosenValue === question.correctAnswer) {
                 questionContainer.innerHTML = `
                         <h2>Rigtigt svar!</h2>
                         <p>${question.answerIsCorrect}</p>
                         <input type="submit" onclick="loadQuestion()" value="Næste">
 `;
+                points++;
             }
             else {
                 questionContainer.innerHTML = `
@@ -87,6 +93,8 @@ function loadAnswer() {
             }
         }
     });
+
+    console.log("Points:" + points);
 
     addChoiceListeners();
 }
@@ -100,7 +108,7 @@ function addChoiceListeners() {
     document.querySelectorAll(".choice").forEach(choice =>
         choice.addEventListener("click", function () {
             chosenValue = this.getAttribute("value");
-            console.log(chosenValue);
+            console.log("chosenValue: " + chosenValue);
         })
     );
 }
