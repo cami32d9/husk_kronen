@@ -1,23 +1,24 @@
 document.addEventListener("DOMContentLoaded", start);
 
-// Chosen value er det svar, vi man har valgt i quizzen
-let choselValue = "";
+// Chosen value er det svar, vi man har valgt i quizzen. Når man ikke har valgt noget, er den sat til "null" for at
+// submit-knapperne ved, at de ikke skal gøre noget, når chosenValue er "null".
+let chosenValue = "null";
 
-// Questions loades fra json i getJson()
+// questions loades fra json i getJson()
 let questions = [];
 
 // questionNumber tæller op for hvert spørgsmål man har svaret på, så det næste spørgsmål bliver loadet og vist.
-// Den starter på 0, da loadQuestion() lægger et tal til allerede første gang, og dermed finder spørgsmål nr 1.
-let questionNumber = 0;
+let questionNumber = 1;
 
+// points er antallet af spørgsmål man har svaret rigtigt på indtil videre.
 let points = 0;
 
+// div'en som indeholder alt i quizzen, bortset fra den første start-knap.
 const questionContainer = document.querySelector(".question_container");
 
-// Det eneste der sker, når siden loades, er, at json-filen loades. Spørgsmålene vises ikke endnu
+// Det eneste der sker, når siden loades, er, at json-filen loades. Spørgsmålene vises ikke endnu.
 function start() {
     console.log("start()");
-    console.log("questionNumber: " + questionNumber);
 
     async function getJson() {
         console.log("getJson");
@@ -29,22 +30,22 @@ function start() {
 }
 
 // Når man trykker på "start_quiz" knappen køres funktionen; den skjuler knappen, gør spørgsmåls-vinduet synligt og kører
-// næste function
+// næste funktion
 function startQuiz() {
     document.querySelector(".start_quiz").classList.add("hidden");
     document.querySelector(".question_container").classList.remove("hidden");
-    questionNumber = 0;
+    questionNumber = 1;
     points = 0;
     loadQuestion();
 }
 
-// loadQuestion() lægger ét tal til questionNumber, så den loader det næste spørgsmål. Hvis questionNumber fra script.js
-// er ens med questionNumber fra quiz.json, vises spørgsmålet i questionContainer. Efter den viser spørgsmålet tilføjer
-// den eventlisteners.
-// Hvis questionNumber er højere end de eksisterende questionNumbers i json-filen, skriver den at quizzen er færdig i
-// stedet for at loade et nyt spørgsmål.
+// Når et nyt spørgsmål loades, sættes chosenValue til "null", så man ikke kan trykke videre før man har valgt et svar.
+// Hvis questionNumber fra dette script matcher questionNumber fra quiz.json, vises spørgsmålet i questionContainer.
+// Dvs. kun ét spørgsmål vises, med det rigtige questionNumber. Herefter tilføjes eventListeners til svarene og
+// submit-knappen.
 function loadQuestion() {
-    questionNumber++;
+    chosenValue = "null";
+    console.log("Value: " + chosenValue);
     console.log("questionNumber:" + questionNumber);
     questions.forEach(question => {
         if (questionNumber === question.questionNumber) {
@@ -57,51 +58,9 @@ function loadQuestion() {
 `;
         }
 
-        else if (questionNumber > question.questionNumber) {
-            let totalQuestionNumber = questionNumber - 1;
-            questionContainer.innerHTML = "Quizzen er færdig. Du svarede rigtigt på " + points + "/" + totalQuestionNumber + " spørgsmål."
-                // `<input type="submit" onclick="loadQuestion()" value="Næste">`
-            ;
-        }
-
     });
     addChoiceListeners();
 }
-
-// Når man trykker "næste" fra et spørgsmål, tjekker den igen questionNumber og hvilket svar den skal loade. Hvis
-// chosenValue er lig med correctAnswer, skriver den, at det er rigtigt og loader det tilsvarende svar. Er chosenValue
-// ikke lig med correctAnswer, viser den, at svaret er forkert.
-function loadAnswer() {
-    console.log("Submitted " + chosenValue);
-
-    questions.forEach(question => {
-        if (questionNumber === question.questionNumber) {
-            if (chosenValue === question.correctAnswer) {
-                questionContainer.innerHTML = `
-                        <h2>Rigtigt svar!</h2>
-                        <p>${question.answerIsCorrect}</p>
-                        <input type="submit" onclick="loadQuestion()" value="Næste">
-`;
-                points++;
-            }
-            else {
-                questionContainer.innerHTML = `
-                        <h2>Forkert svar!</h2>
-                        <p>${question.answerIsIncorrect}</p>
-                        <input type="submit" onclick="loadQuestion()" value="Næste">
-`;
-            }
-        }
-    });
-
-    console.log("Points:" + points);
-
-    addChoiceListeners();
-}
-
-
-// -------------------------------
-
 
 // Tilføjer eventListeners til valgene. Når man vælger et svar, ændrer den chosenValue til at stemme overens med valget.
 function addChoiceListeners() {
@@ -111,4 +70,73 @@ function addChoiceListeners() {
             console.log("chosenValue: " + chosenValue);
         })
     );
+}
+
+// Når man trykker "næste" fra et spørgsmål, tjekker den først om chosenValue er "null", altså om man ikke har valgt et
+// svar. Er det tilfældet, gør functionen intet.
+// Er chosenValue ikke "null", tjekker den igen questionNumber og hvilket svar den skal loade. Herefter tjekker den, om
+// chosenValue er lig med correctAnswer (fra json), og skriver om svaret er rigtigt eller forkert og loader det
+// tilsvarende svar fra json. Er chosenValue lig med correctAnswer, tilføjer den desuden ét point.
+function loadAnswer() {
+    console.log("Submitted " + chosenValue);
+    if (chosenValue === "null") {
+    }
+
+    else {
+        questions.forEach(question => {
+            if (questionNumber === question.questionNumber) {
+                if (chosenValue === question.correctAnswer) {
+                    questionContainer.innerHTML = `
+                        <h2>Rigtigt svar!</h2>
+                        <p>${question.answerIsCorrect}</p>
+                        <input type="submit" onclick="continueQuiz()" value="Næste">
+`;
+                    points++;
+                }
+
+                else {
+                    questionContainer.innerHTML = `
+                        <h2>Forkert svar!</h2>
+                        <p>${question.answerIsIncorrect}</p>
+                        <input type="submit" onclick="continueQuiz()" value="Næste">
+`;
+                }
+            }
+        })
+    }
+
+    console.log("Points:" + points);
+
+}
+
+// Når man går videre fra et svar, tilføjes én til questionNumber. Herefter tjekkes, som questionNumber herfra matcher
+// et questionNumber fra json-filen. Passer dette, loader den det næste spørgsmål med loadQuestion().
+// Hvs questionNumber nu er større end det største questionNumber i json, kører den loadEnd() i stedet, for at vise
+// slutningen på quizzen.
+function continueQuiz() {
+    console.log("ContinueQuiz");
+    questionNumber++;
+
+    questions.forEach(question => {
+
+        if (questionNumber === question.questionNumber) {
+            loadQuestion();
+        }
+
+        else if (questionNumber > question.questionNumber) {
+            loadEnd();
+        }
+    })
+}
+
+// Hvis questionNumber herfra er større end questionNumber fra json, bliver loadEnd kørt. Denne viser at quizzen er
+// færdig, antallet af point og en knap til at starte quizzen forfra.
+// questionNumber er nu 1 større end antallet af spørgsmål/det højeste questionNumber fra json. For at finde det totale
+// antal sørgsmål, laver vi derfor variablen totalQuestionNumber = questionNumber - 1, og bruger denne i teksten.
+function loadEnd() {
+    let totalQuestionNumber = questionNumber - 1;
+    questionContainer.innerHTML = `
+                <p>Quizzen er færdig. Du svarede rigtigt på ${points} / ${totalQuestionNumber} spørgsmål.</p>
+                <input type="submit" onclick="startQuiz()" value="Næste">
+`
 }
