@@ -5,95 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <meta name="robots" content="noindex">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="elements/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="elements/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="elements/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="elements/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="elements/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="elements/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="elements/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="elements/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="elements/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="elements/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="elements/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="elements/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="elements/icons/favicon-16x16.png">
+    <link rel="manifest" href="elements/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="elements/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Cutive+Mono|Source+Code+Pro:200,300,400,500,600,700,900"
+        rel="stylesheet"
+    >
+
     <title>Husk kronen - Rådet for Sikker Trafik</title>
 </head>
 
 <body>
-    <nav>
-        <div class="nav__content">
-            <img src="elements/logo.png">
-            <a href="#">Videoportfolio</a>
-        </div>
-    </nav>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="elements/logo.png" alt="logo">
+            </a>
+            <a href="videoportfolio.html">
+                <div class="videoportfolio_link">
+                    VIDEOPORTFOLIO
+                </div>
+            </a>
+        </nav>
+    </header>
 
     <main>
-        <section id="title_section" class="main__background_1">
-            <div class="main__content">
-                <h1>
-                    Husk kronen
-                </h1>
+        <section id="splash_section" class="main__background_splash">
+            <div class="splash">
+                <img src="elements/splash_full.svg" alt="splash">
             </div>
         </section>
 
         <section id="video_section" class="main__background_2">
-            <div class="main__content">
-                <h2>Kampagnevideo</h2>
-                <!--"quiz"-div'en nedenunder er KUN en placeholder - den skal erstattes med videoen-->
+            <div class="main__content flex">
+                <div class="flex_one">
+                    <h1>
+                        Husk kronen
+                    </h1>
+                    <p>
+                        Vi er gode til at passe på hinanden, men husker vi også at passe på os selv?
+                    </p>
+                    <p>
+                        Hos Rådet for Sikker Trafik lægger vi stor vægt på, at alle skal være trygge og sikre på cyklen.
+                        Vi kan med glæde fortælle, at hele 70% af danskere i aldersgruppen 60-80 år til tider hopper på
+                        cyklen - dog er det kun 38%, som altid bruger cykelhjelm.
+                    </p>
+                    <p>
+                        Hjelmen er vigtig for at passe på dig selv - både for din egen, og for dine kærestes skyld.
+                    </p>
+                    <p>
+                        #huskkronen, og del budskabet!
+                    </p>
+                </div>
 
-                <div class="quiz"></div>
+                <div class="flex_one">
+                    <div class="campaign_video">
+
+                        <iframe
+                            class="long_campaign"
+                            src="https://www.youtube.com/embed/_GgeWRZis4c"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+
+                    </div>
+                </div>
 
             </div>
         </section>
 
         <section id="info_section" class="main__background_1">
-            <div class="main__content">
-                <div class="flex">
-                    <div class="flex_one">
-                <h2>Husker du at passe på dig selv i trafikken?</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus
-                    amet
-                    praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem
-                    aliquam nunc elementum. Primis eaque condimentum est mauris fames duis, vitae sed. Voluptas
-                    venenatis
-                    sapiente proin, montes ac litora nunc non laoreet tempus, mauris velit amet tellus, lacus vel
-                    placerat
-                    arcu, condimentum quis donec.
-                </p>
-                    </div>
-                    <div class="flex_one">
-                <h2><u>
-                    Infografik infografik
-                </u></h2>
+            <div class="main__content flex">
+                <div class="flex_one">
+
+                    <div id="container_infografik">
+
+                        <div id="kakediagram_1">
+                            <div id="arm"></div>
+                            <div id="hoved"></div>
+                            <div id="ben"></div>
+                            <div id="pil1"></div>
+                            <div id="pil2"></div>
+                            <div id="pil3"></div>
+                            <div id="pil4"></div>
+
+                            <div class="tekst_infografik">
+                                <h3>Andet</h3>
+                            </div>
+                            <div class="tekst_infografik2">
+                                <p>22%</p>
+                            </div>
+                            <div class="tekst_infografik3">
+                                <p>18%</p>
+                            </div>
+                            <div class="tekst_infografik4">
+                                <p>23%</p>
+                            </div>
+                            <div class="tekst_infografik5">
+                                <p>36%</p>
+                            </div>
+
+                            <svg id="piechart" viewbox="0 0 100 100">
+                                <circle class="pie1" r="50" cx="50" cy="50"/>
+                                <circle class="pie2" r="50" cx="50" cy="50"/>
+                                <circle class="pie3" r="50" cx="50" cy="50"/>
+                            </svg>
+                        </div>
+                        <div id="kakediagram_2">
+                            <div id="pil5"></div>
+                            <div id="hoved_m_hjelm"></div>
+                            <div id="hoved_u_hjelm"></div>
+                            <div id="pil6"></div>
+                            <div class="tekst_infografik6">
+                                <p>38%</p>
+                            </div>
+                            <div class="tekst_infografik7">
+                                <p>62%</p>
+                            </div>
+                            <svg id="piechart_2" viewbox="0 0 100 100">
+                                <circle class="pie4" r="50" cx="50" cy="50"/>
+                            </svg>
+                        </div>
                     </div>
 
                 </div>
+                <div class="flex_one">
+                    <h2>Hvordan passer vi på os selv i trafikken?</h2>
+                    <p>
+                        Omkring 70% af alle danskere i alderen 60-80 år cykler regelmæssigt - men kun 38% bruger altid
+                        cykelhjelm.
+                    </p>
+                    <p>
+                        Når vi ser på statistikkerne for cykelulykker med alvorlige skader (øverst til venstre), går ca.
+                        22% af disse skader værst over hovedet. Af disse skader, forekommer ca. 70% af de alvorlige
+                        hovedskader hos folk, som <b>ikke</b> har haft hjelm på, mens kun 30% forekommer hos folk som
+                        <b>har</b> haft hjelm på.
+                    </p>
+                    <p>
+                        Alligevel er det kun 38% af cyklister på 60+, som altid bruger cykelhjelm. Hvis vi kan få flere
+                        til at bruge cykelhjelm, kan vi også mindske antallet af alvorlige hovedskader.
+                    </p>
+                    <p>
+                        Så #huskkronen og min dine nærmeste på det.
+                    </p>
+                </div>
+
 
             </div>
         </section>
 
         <section id="quiz_section" class="main__background_2">
-            <div class="main__content">
-                <h2>Tag quizzen</h2>
-                <p>
-                    Mange på 60+ tager cyklen, men hvor meget ved du om ældres sikkerhed i trafikken?
-                </p>
-                <div id="quiz" class="quiz">
-                    <!--Knappen kører js-functionen startQuiz "onclick"/når man klikker-->
-                    <button class="start_quiz" onclick="startQuiz()">Tag quizzen</button>
+            <div class="main__content flex">
+                <div class="flex_one">
+                    <h2>Tag quizzen</h2>
+                    <p>
+                        Mange på 60+ tager cyklen, og de fleste føler sig generelt trygge i trafikken. Men hvor mange i
+                        aldersgruppen har egentlig fysiske udfordringer, som kan påvirke deres evne til at cykle? Hvor
+                        mange
+                        kommer faktisk til skade på cyklen?
+                    </p>
+                    <p>
+                        Tag quizzen og test din viden om cyklister på 60+ og deres sikkerhed i trafikken.
+                    </p>
+                </div>
 
-                    <div class="question_container hidden">
+                <div class="flex_one">
+                    <div id="quiz" class="quiz">
+                        <!--Knappen kører js-functionen startQuiz "onclick"/når man klikker-->
+                        <button class="start_quiz" onclick="startQuiz()">Tag quizzen</button>
 
-
+                        <div class="question_container hidden"></div>
+                        <div class="error_text"></div>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <section class="main__background_1">
-            <div class="main__content">
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="footer__content">
-            Følg Rådet for Sikker Trafik på de sociale medier
+            <div>
+                <p>
+                    Følg Rådet for Sikker Trafik på de sociale medier
+                </p>
+                <p>
+                    Rådet for Sikker Trafik
 
-            Rådet for Sikker Trafik
+                </p>
+                <p>
+                    Lersø Parkallé 111, 2100 København Ø
+                </p>
+            </div>
 
-            Lersø Parkallé 111, 2100 København Ø
+            <div>
+                <p>
+                    PRESSEKONTAKT
+                </p>
+                <p>
+                    PERSONDATAPOLITIK
+                </p>
+            </div>
         </div>
     </footer>
 

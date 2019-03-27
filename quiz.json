@@ -1,22 +1,56 @@
 [
-  {
-    "questionNumber": 1,
-    "question": "Hvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle?",
-    "answerA": "17%",
-    "answerB": "52%",
-    "answerC": "68%",
-    "correctAnswer": "17%",
-    "answerIsCorrect": "Svaret er rigtigt! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum.",
-    "answerIsIncorrect": "Svaret er forkert! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum."
+    {
+        "questionNumber": 1,
+        "question": "Hvor mange i aldersgruppen 60-80 år tror du cykler 1 eller flere gange om ugen i sommerhalvåret?",
+        "answerA": "35%",
+        "answerB": "47%",
+        "answerC": "82%",
+        "correctAnswer": "47%",
+        "description": "I sommerhalvåret cykler ca. 47% af danskerne mellem 60 og 80 år hver uge. 20% cykler dagligt eller næsten dagligt, hvor 19% cykler 2-5 gange om ugen og 8% cykler en gang om ugen. Hvorimod i vinterhalvåret cykler 12% dagligt eller næsten dagligt."
   },
-  {
-    "questionNumber": 2,
-    "question": "wwwwHvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle?",
-    "answerA": "w17%",
-    "answerB": "w52%",
-    "answerC": "w68%",
-    "correctAnswer": "w17%",
-    "answerIsCorrect": "wwwSvaret er rigtigt! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum.",
-    "answerIsIncorrect": "wwwSvaret er forkert! Lorem ipsum dolor sit amet, enim sed felis bibendum non, feugiat augue suspendisse vestibulum risus amet praesent, porttitor enim ipsum nulla eu eget, vel magna diam congue, natoque quis id. Vitae lorem aliquam nunc elementum."
-  }
+    {
+        "questionNumber": 2,
+        "question": "Hvor mange cyklister på 60+, tror du, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle?",
+        "answerA": "17%",
+        "answerB": "52%",
+        "answerC": "68%",
+        "correctAnswer": "17%",
+        "description": "17% af dem, der cykler, har en eller flere fysiske udfordringer, der påvirker deres evne til at cykle."
+  },
+    {
+        "questionNumber": 3,
+        "question": "Hvor mange cyklister på 60-65 år, tror du, kører el-cykel, i sammenligning med de øvrige aldersgrupper?",
+        "answerA": "14% færre",
+        "answerB": "2% flere",
+        "answerC": "14% flere",
+        "correctAnswer": "14% flere",
+        "description": "Blandt de 60-65 årige er der 14% flere end blandt de øvrige aldersgrupper, som kører på el-cykel, ligesom andelen, der kører på el-cykel også er lidt større blandt de med fysiske begrænsninger (14%)."
+  },
+    {
+        "questionNumber": 4,
+        "question": "Uheld blandt ældre cyklister er oftest forbundet med manglende balance. Men hvor mange procent af cyklister på 60+ tror du er væltet på cyklen inden for det seneste år?",
+        "answerA": "5%",
+        "answerB": "8%",
+        "answerC": "10%",
+        "correctAnswer": "8%",
+        "description": "I en spørgeundersøgelse svarede 8% i aldersgruppen 60+ at de er væltet inden for det seneste år. 49% siger at de fik mindre skade da de væltede på deres cykel og 5% fik alvorlige skader. 47% fik ingen skader."
+  },
+    {
+        "questionNumber": 5,
+        "question": "62% af cyklister på 60+ bruger ikke altid cykelhjelm. Hvor mange af dem, tror du, ville (efter eget udsagn) bruge cykelhjelm, hvis det blev lovpligtigt?",
+        "answerA": "10%",
+        "answerB": "25%",
+        "answerC": "45%",
+        "correctAnswer": "45%",
+        "description": "45% af de ældre cyklister, som i dag kører uden cykelhjelm, siger, at de ville bruge cykelhjelm, hvis det var lovpligtigt. 14% svarer desuden, at hvis deres barnebarn/børnebørn bad dem om det, ville de gøre det."
+  },
+    {
+        "questionNumber": 6,
+        "question": "Herrecykler er mindre sikre end unisex cykler, specielt for folk med fysiske udfordringer eller dårlig balance. Men hvor mange mænd på 60+, tror du, bruger herrecykler, på trods af dette?",
+        "answerA": "71%",
+        "answerB": "82%",
+        "answerC": "89%",
+        "correctAnswer": "82%",
+        "description": "82% af mænd på 60+ bruger herrecykel (med stang) selvom de er mindre sikre, specielt for folk med fysiske udfordringer eller dårlig balance. 40% af danskere i alderen 60+ vidste ikke, at unisex cykler med lav indstigning også er beregnet til mænd, før de blev præsenteret for det i en spørgeundersøgelse."
+      }
 ]

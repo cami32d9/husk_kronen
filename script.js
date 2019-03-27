@@ -51,10 +51,11 @@ function loadQuestion() {
         if (questionNumber === question.questionNumber) {
             questionContainer.innerHTML = `
                         ${question.question}<br>
-                            <input type="radio" class="choice" name="choice" value="${question.answerA}">${question.answerA}<br>
-                            <input type="radio" class="choice" name="choice" value="${question.answerB}">${question.answerB}<br>
-                            <input type="radio" class="choice" name="choice" value="${question.answerC}">${question.answerC}<br>
-                            <input type="submit" onclick="loadAnswer()" value="Næste">
+                        <hr>
+                            <label><input type="radio" class="choice" name="choice" value="${question.answerA}">${question.answerA}<br></label>
+                            <label><input type="radio" class="choice" name="choice" value="${question.answerB}">${question.answerB}<br></label>
+                            <label><input type="radio" class="choice" name="choice" value="${question.answerC}">${question.answerC}<br></label>
+                            <input type="submit" onclick="loadAnswer()" value="Svar">
 `;
         }
 
@@ -80,34 +81,41 @@ function addChoiceListeners() {
 function loadAnswer() {
     console.log("Submitted " + chosenValue);
     if (chosenValue === "null") {
+        document.querySelector(".error_text").innerHTML = `
+        Du skal vælge et svar, før du kan gå videre!
+`
     }
 
     else {
         questions.forEach(question => {
             if (questionNumber === question.questionNumber) {
+
+                document.querySelector(".error_text").innerHTML = "";
+
                 if (chosenValue === question.correctAnswer) {
                     questionContainer.innerHTML = `
-                        <h2>Rigtigt svar!</h2>
-                        <p>${question.answerIsCorrect}</p>
-                        <input type="submit" onclick="continueQuiz()" value="Næste">
-`;
+                        <h2 class="correct">✓ Rigtigt svar!</h2>
+                        `;
                     points++;
                 }
 
                 else {
                     questionContainer.innerHTML = `
-                        <h2>Forkert svar!</h2>
-                        <p>${question.answerIsIncorrect}</p>
+                        <h2 class="incorrect">✗ Forkert svar!</h2>
+`;
+                }
+
+                questionContainer.innerHTML += `
+                        <p>${question.description}</p>
                         <input type="submit" onclick="continueQuiz()" value="Næste">
 `;
                 }
-            }
-        })
+
+            })
+        }
     }
 
-    console.log("Points:" + points);
 
-}
 
 // Når man går videre fra et svar, tilføjes én til questionNumber. Herefter tjekkes, som questionNumber herfra matcher
 // et questionNumber fra json-filen. Passer dette, loader den det næste spørgsmål med loadQuestion().
@@ -136,7 +144,11 @@ function continueQuiz() {
 function loadEnd() {
     let totalQuestionNumber = questionNumber - 1;
     questionContainer.innerHTML = `
-                <p>Quizzen er færdig. Du svarede rigtigt på ${points} / ${totalQuestionNumber} spørgsmål.</p>
-                <input type="submit" onclick="startQuiz()" value="Næste">
+                        <h2>Quizzen er slut!</h2>
+                <p>Du svarede rigtigt på <b>${points} / ${totalQuestionNumber} spørgsmål.</b></p>
+                <p>Var svarene, som du havde forventet?</p>
+                <p>Mange danskere over 60 cykler regelmæssigt, og det er vigtigt for os alle, at vi passer på hinanden -
+                og på os selv. Så husk at bruge hjelm, og vær opmærksom i trafikken.</p>
+                <input type="submit" onclick="startQuiz()" value="Prøv quizzen igen">
 `
 }
